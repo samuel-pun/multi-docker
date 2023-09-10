@@ -17,6 +17,8 @@ const pgClient = new Pool({
   database: keys.pgDatabase,
   password: keys.pgPassword,
   port: keys.pgPort,
+  ssl: {rejectUnauthorized: false },
+  // https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/learn/lecture/21321244#questions/20311452
 });
 
 pgClient.on("connect", (client) => {
